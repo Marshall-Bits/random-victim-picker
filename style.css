@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #1108EB;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: 'Muli', sans-serif;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+}
+
+h3 {
+	color: #fff;
+	margin: 10px 0 20px;
+}
+
+.container {
+	width: 700px;
+	max-width: 100%;
+}
+
+textarea {
+	border: none;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin: 0 0 20px;
+	height: 100px;
+	width: 100%;
+}
+
+.tag, button {
+	background-color: #5b6af0;
+	border-radius: 50px;
+	color: #fff;
+	display: inline-block;
+	font-size: 30px;
+	padding: 10px 20px;
+	margin: 0 20px 20px 0;
+}
+
+button {
+    background-color: #6b709a;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+
+.remove-tag {
+    padding-left: 25px;
+    cursor: pointer;
+    color:#5BC4F0;
+}
+
+.tag.highlight {
+	background-color: #5BC4F0;
+}
+
+#modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    font-size: larger;
+    padding-bottom: 40px;
+}
+
+.close{
+    align-self: flex-end;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 20px;
+    color: #fff;
+    font-size: 12px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
