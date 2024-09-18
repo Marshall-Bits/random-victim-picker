@@ -8,25 +8,22 @@ const victimizedList = document.getElementById('victimized-list');
 const removeTag = document.getElementsByClassName('remove-tag');
 
 const tags = [
-    'Amanda',
-    'Daniela',
-    'Diana',
-    'Elena',
-    'Erika',
-    'Fernanda',
-    'Gabriela',
-    'Gloria',
-    'Guadalupe',
-    'Isabel',
-    'Jazmin',
-    'Jessica',
+   "Airam",
+   "Andrea",
+   "Eleni",
+   "Èric",
+   "Jose",
+   "Marta",
+   "Roxana",
+   "Sven",
+   "Tomás",
 ];
 
 
 const tagsVictimized = [];
 
 createTags()
-
+ 
 selectButton.addEventListener('click', (e) => {
     // create a tag for all the inputs separated by a comma
     createTags(e.target.value);
@@ -136,4 +133,54 @@ function highlightTag(tag) {
 
 function unhighlightTag(tag) {
     tag.classList.remove('highlight');
+}
+
+const groupButton = document.getElementById('group-button');
+const groupList = document.getElementById('group-list');
+
+// Event listener to generate random groups
+groupButton.addEventListener('click', generateRandomGroups);
+
+function generateRandomGroups() {
+    // Shuffle the tags array and split into 4 groups
+    const shuffledTags = shuffleArray([...tags]); // copy the array to avoid mutating original
+    const groupCount = 4;
+    const groups = Array.from({ length: groupCount }, () => []);
+
+    shuffledTags.forEach((tag, index) => {
+        groups[index % groupCount].push(tag);
+    });
+
+    displayGroups(groups);
+}
+
+// Helper function to shuffle an array (Fisher-Yates algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Display the generated groups in the DOM
+function displayGroups(groups) {
+    groupList.innerHTML = ''; // clear the previous groups
+
+    groups.forEach((group, index) => {
+        const groupDiv = document.createElement('div');
+        groupDiv.classList.add('group');
+        const groupTitle = document.createElement('h3');
+        groupTitle.innerText = `Group ${index + 1}`;
+        groupDiv.appendChild(groupTitle);
+
+        const groupMembers = document.createElement('ul');
+        group.forEach(member => {
+            const memberItem = document.createElement('li');
+            memberItem.innerText = member;
+            groupMembers.appendChild(memberItem);
+        });
+        groupDiv.appendChild(groupMembers);
+        groupList.appendChild(groupDiv);
+    });
 }

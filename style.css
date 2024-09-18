@@ -45,7 +45,7 @@ textarea {
 	display: inline-block;
 	font-size: 30px;
 	padding: 10px 20px;
-	margin: 0 20px 20px 0;
+	margin: 20px;
 }
 
 button {
@@ -102,10 +102,39 @@ footer{
     margin-top: 20px;
     color: #fff;
     font-size: 12px;
+    width: 100%;
 }
 
 ul{
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.group {
+    font-size: large;
+    background-color: #5b6af0;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+}
+
+.group h3 {
+    margin: 0;
+}
+
+.group ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#group-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
