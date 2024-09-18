@@ -1,3 +1,3 @@
 # random-victim-picker
 
-Credit: Florin Pop
+Mini project based on Florin's Pop example. [Link]('https://www.florin-pop.com/')
